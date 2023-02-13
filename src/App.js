@@ -12,5 +12,14 @@ function App() {
   );
 }
 
+<small>
+<a
+  href="https://github.com/AppolloniaK/weather-app-project"
+  target="_blank"
+  >Open-source code</a
+>
+by Appollonia Khan.
+</small>
+
 export default App;
 
