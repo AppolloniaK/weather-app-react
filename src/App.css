@@ -5,7 +5,7 @@
 
 body {
   font-family: arial, sans-serif;
-  background-image: linear-gradient(skyblue, rgb(56, 56, 148));
+  background-color: skyblue;
   background-size: cover;
   background-position: center;
 }
@@ -43,3 +43,4 @@ li {
 li:first-letter {
   text-transform: capitalize;
 }
+
