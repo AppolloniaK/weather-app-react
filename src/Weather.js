@@ -29,43 +29,15 @@ export default function Weather() {
     
       let form = (
         <form onSubmit={handleSubmit}>
-        <div className="row">
-          <div className="col-8">
           <input
             type="search"
             placeholder="Enter a city..."
             onChange={updateCity}
           />
-            </div>
-        <div className="col-2">
           <button type="Submit">Search</button>
-          </div>
-      </div>
-        </form>
+          </form>
       );
-    
-      let footer = (
-        <footer className="mt-4">
-          This project was coded by: {""}
-          <br />
-          <a
-            href="https://ellacodes.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Gabriella Corales "EllaCodes"
-          </a>{" "}
-          and is{" "}
-          <a
-            href="https://github.com/EllaCodes4/react-weather-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            open-sourced on GitHub
-          </a>
-        </footer>
-      );
-      
+
       if (loaded) {
         return (
           <div>
@@ -82,6 +54,6 @@ export default function Weather() {
         );
       } else {
         return form;
-      }
+      };
     }
     
