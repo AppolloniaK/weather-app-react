@@ -26,7 +26,7 @@ export default function Weather() {
     <li>Wednesday 07:00</li>
     <li>Mostly Cloudy</li>
     </ul>
-    <div className="row">
+    <div className="row mt-b">
         <div className="col-6">
             <div className="clearfix">
                 <img src={weather.icon} 
