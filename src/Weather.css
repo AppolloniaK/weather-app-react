@@ -31,10 +31,10 @@
     color: rgb(33, 33, 33);
     font-size: 64px;
     font-weight: bold;
-    line-height: 1;
+    line-height: 64px;
   }
   
-  .Weather .weather-temperature .units {
+  .Weather .units {
     position: relative;
     font-size: 16px;
     top: -34px;
