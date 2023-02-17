@@ -40,9 +40,13 @@ display: inline-block;
   }
   
   .Weather .units {
+    color: rgb(33, 33, 33);
     position: relative;
     font-size: 16px;
-    top: -34px;
+    font-weight: 400;
+    line-height: 1;
+    top: -32px;
+    margin-left: 5px;
   }
   
   .Weather .weather-temperature .active {
