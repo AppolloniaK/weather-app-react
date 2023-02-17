@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Weather.css";
 import axios from "axios";
 
 
@@ -6,6 +7,7 @@ export default function Weather() {
     const [city, setCity] = useState("");
     const [loaded, setLoaded] = useState(false);
     const [weather, setWeather] = useState({});
+    
     function displayWeather(response) {
         setLoaded(true);
         setWeather({
@@ -29,18 +31,25 @@ export default function Weather() {
     
       let form = (
         <form onSubmit={handleSubmit}>
+               <div className="row">
+                <div className="col-9">
           <input
             type="search"
             placeholder="Enter a city..."
+            className="form-control"
             onChange={updateCity}
           />
-          <button type="Submit">Search</button>
+          </div>
+          <div className="col-3"></div>
+          <input type="submit" value="Search" className="btn btn-primary" />
+          </div> 
           </form>
       );
 
       if (loaded) {
         return (
-          <div>
+            <div className="Weather">
+            <h2>Welcome to Weather!</h2>
             {form}
             <ul>
               <li>Temperature {Math.round(weather.temperature)}°C</li>
