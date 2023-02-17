@@ -7,6 +7,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
+      <div className="container">
        <h1>Weather App</h1>
       <Weather />
   <footer>
@@ -14,8 +15,9 @@ function App() {
         href="https://github.com/AppolloniaK/weather-app-react"
         target="_blank"
       >
-        Open-sourced</a> on GutHub
+        Open-sourced</a> on GutHub.
   </footer>
+      </div>
       </div>
   );
 }
