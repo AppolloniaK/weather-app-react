@@ -28,10 +28,18 @@ export default function Weather() {
     </ul>
     <div className="row">
         <div className="col-6">
-                <img src={weather.icon} alt="Weather Icon" />
+            <div className="clearfix">
+                <img src={weather.icon} 
+                alt="Weather Icon" 
+                className="float-left"
+                />
+                <div className="float-left">
                 <span className="temperaturre">6</span>
                 <span className="unit">°</span>
+                </div>
         </div>
+        </div>
+        <div className="col-6">
     <ul>
               <li>Temperature {Math.round(weather.temperature)}°C</li>
               <li>Humidity {weather.humidity}%</li>
@@ -39,6 +47,6 @@ export default function Weather() {
             </ul>
     </div>
     </div>
-   );
+    );
     }
     

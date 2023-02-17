@@ -26,21 +26,11 @@
     line-height: 20px;
     list-style: none;
   }
-
-  .Weather .overview {
-    margin-bottom: 20px;
-  }
   
-  .Weather .weather-temperature img {
-    margin-right: 5px;
-    height: 64px;
-    width: 64px;
-  }
-  
-  .Weather .weather-temperature strong {
+  .Weather .temperature {
     color: rgb(33, 33, 33);
     font-size: 64px;
-    font-weight: 400;
+    font-weight: bold;
     line-height: 1;
   }
   
