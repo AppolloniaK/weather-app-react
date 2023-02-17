@@ -28,7 +28,9 @@ export default function Weather() {
     </ul>
     <div className="row">
         <div className="col-6">
-                <img src={weather.icon} alt="Weather Icon" />°6
+                <img src={weather.icon} alt="Weather Icon" />
+                <span className="temperaturre">6</span>
+                <span className="unit">°</span>
         </div>
     <ul>
               <li>Temperature {Math.round(weather.temperature)}°C</li>
