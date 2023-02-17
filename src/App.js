@@ -1,6 +1,5 @@
 import React from "react";
 import Weather from "./Weather";
-import Opensource from "./Opensource";
 
 import "./App.css";
 
