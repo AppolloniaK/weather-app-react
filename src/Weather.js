@@ -5,10 +5,18 @@ import axios from "axios";
 
 export default function Weather(props) {
     const [ready, setReady] = useState(false);
-    const [temperature, setTemperature] = useState(null);
+    const [weatherData, setWeatherData] = useState({});
     function handleResponse(response) {
 console.log(response.data);
-setTemperature(response.data.main.temp);
+setWeatherData({
+    temperature: response.data.main.temp,
+    humidity: response.data.main.humidity,
+    description: response.data.weather[0].description,
+    icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    wind: response.data.wind.speed,
+    city: response.data.name
+});
+
 setReady(true);
     }
 
@@ -33,29 +41,30 @@ setReady(true);
           </div> 
           </div>
           </form>     
-<h1>New York</h1>
+<h1>{weatherData.city}</h1>
 <ul>
     <li>Wednesday 07:00</li>
-    <li>Mostly Cloudy</li>
+    <li>{weatherData.description}</li>
     </ul>
     <div className="row mt-3">
         <div className="col-6">
             <div className="clearfix">
-                <img src={weather.icon} 
-                alt="Weather Icon" 
+                <img src={weatherData.icon} 
+                alt={weatherData.description}
                 className="float-left"
                 />
                 <div className="float-left">
-                <span className="temperaturre">{Math.round(temperature)}</span>
-                <span className="unit">°</span>
+                <span className="temperature">
+                    {Math.round(weatherData.temperature)}
+                    </span>
+                <span className="unit">°C</span>
                 </div>
         </div>
         </div>
         <div className="col-6">
     <ul>
-              <li>Temperature {Math.round(weather.temperature)}°C</li>
-              <li>Humidity {weather.humidity}%</li>
-              <li>Wind {Math.round(weather.wind)} km/h</li>
+              <li>Humidity {weatherData.humidity}%</li>
+              <li>Wind: {Math.round(weatherData.wind)} km/h</li>
             </ul>
     </div>
     </div>
