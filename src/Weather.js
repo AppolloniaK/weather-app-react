@@ -3,7 +3,16 @@ import "./Weather.css";
 import axios from "axios";
 
 
-export default function Weather() {
+export default function Weather(props) {
+    const [ready, setReady] = useState(false);
+    const [temperature, setTemperature] = useState(null);
+    function handleResponse(response) {
+console.log(response.data);
+setTemperature(response.data.main.temp);
+setReady(true);
+    }
+
+    if (ready) {
    return (
     <div className="Weather">
         <form>     
@@ -20,7 +29,6 @@ export default function Weather() {
           <input type="submit" 
           value="Search" 
           className="btn btn-primary w-100" 
-          
           />
           </div> 
           </div>
@@ -30,7 +38,7 @@ export default function Weather() {
     <li>Wednesday 07:00</li>
     <li>Mostly Cloudy</li>
     </ul>
-    <div className="row mt-b">
+    <div className="row mt-3">
         <div className="col-6">
             <div className="clearfix">
                 <img src={weather.icon} 
@@ -38,7 +46,7 @@ export default function Weather() {
                 className="float-left"
                 />
                 <div className="float-left">
-                <span className="temperaturre">6</span>
+                <span className="temperaturre">{Math.round(temperature)}</span>
                 <span className="unit">°</span>
                 </div>
         </div>
@@ -53,4 +61,12 @@ export default function Weather() {
     </div>
     </div>
    );
+    } else {
+        const apiKey = "50cfd6595523a7f69104e698dea7cff4";
+        let city="New York";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;    
+        axios.get(apiUrl).then(handleResponse);
+
+        return "Loading...";
+    }
 }
