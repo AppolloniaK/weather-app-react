@@ -8,7 +8,7 @@ export default function Weather(props) {
     const [city, setCity] = useState(props.defaultCity);
     
     function handleResponse(response) {
-     setWeatherData({
+    setWeatherData({
     ready: true,
     temperature: response.data.main.temp,
     humidity: response.data.main.humidity,
