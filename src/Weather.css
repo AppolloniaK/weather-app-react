@@ -28,14 +28,20 @@ display: inline-block;
   .Weather li {
     font-size: 16px;
     font-weight: 100;
-    line-height: 20px;
+    line-height: 19px;
     list-style: none;
+  }
+
+  .Weather canvas {
+    margin-right: 5px;
+    margin-top: 5px;
+    display: inline-block;
   }
   
   .Weather .temperature {
     color: rgb(33, 33, 33);
     font-size: 64px;
-    font-weight: bold;
+    font-weight: 400;
     line-height: 64px;
   }
   
@@ -44,34 +50,8 @@ display: inline-block;
     position: relative;
     font-size: 16px;
     font-weight: 400;
+    position: relative;
     line-height: 1;
-    top: -32px;
+    top: -34px;
   }
   
-  .Weather .weather-temperature .active {
-    color: rgb(33, 33, 33);
-    cursor: default;
-  }
-  
-  .Weather .weather-temperature .active:hover {
-    text-decoration: none;
-  }
-  
-  .Weather .weather-forecast {
-    margin-top: 20px;
-    text-align: center;
-    color: #000;
-  }
-  
-  .Weather .weather-forecast-date {
-    font-size: 16px;
-    opacity: 0.5;
-  }
-  
-  .Weather .weather-forecast-temperature-min {
-    opacity: 0.5;
-  }
-  
-  .Weather .weather-forecast-temperatures {
-    font-size: 13px;
-  }  
