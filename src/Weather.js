@@ -4,9 +4,9 @@ import axios from "axios";
 import "./Weather.css";
 
 export default function Weather(props) {
-    const [weatherData, setWeatherData] = useState({ ready: false });
-    const [city, setCity] = useState(props.defaultCity);
-    
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
+
     function handleResponse(response) {
     setWeatherData({
     ready: true,
@@ -20,13 +20,6 @@ export default function Weather(props) {
 });
     }
 
-function search() {
-    const apiKey = "50cfd6595523a7f69104e698dea7cff4";
-    let city="New York";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;    
-    axios.get(apiUrl).then(handleResponse);
-}
-
     function handleSubmit(event) {
       event.preventDefault();
       search();
@@ -36,6 +29,13 @@ function search() {
       setCity(event.target.value);
     }
 
+    function search() {
+      const apiKey = "50cfd6595523a7f69104e698dea7cff4";
+      let city="New York";
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;    
+      axios.get(apiUrl).then(handleResponse);
+  }
+  
     if (weatherData.ready) {
    return (
     <div className="Weather">
@@ -51,7 +51,8 @@ function search() {
           />
           </div>
           <div className="col-3">
-          <input type="submit" 
+          <input 
+          type="submit" 
           value="Search" 
           className="btn btn-primary w-100" 
           />
