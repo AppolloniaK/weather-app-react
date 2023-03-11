@@ -29,21 +29,23 @@ if (loaded) {
   return (
     <div className="WeatherForecast">
       <div className="row">
-          {forecast.map(function(dailyForecast, index) {
+          {forecast.map(function (dailyForecast, index) {
             if (index < 5) {
               return (
               <div className="col" key={index}>
                 <WeatherForecastDay data={dailyForecast} />
-              </div>
-            );
-              }
+              </div>    
+              );
+            } else {
+              return <></>
+            }
           })}
-       </div>
+        </div>
       </div>
     );
-} else {
-load();  
+  } else {
+    load();
 
-  return null;
-}
+    return null;
+  }
 }
